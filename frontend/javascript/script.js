@@ -3,7 +3,7 @@ const input = document.getElementById("input-link")
 
 
 function criar_QR(){
-  //Limpar o campo de código QR
+  //Limpar o campo de código QR para gerar outro
   qrcodeDiv.innerHTML = ""
 
   if(!input.value){
@@ -19,12 +19,19 @@ function criar_QR(){
   }
 }
 
-
 //Limpar input e div do qrcode
 function limpar_QR(){
   qrcodeDiv.innerHTML = ''
   input.value = ''
 }
+
+document.addEventListener("keydown", function(event){
+  if(event.key === "Enter"){
+    criar_QR()
+  }else if(event.key === "Escape"){
+    limpar_QR()
+  }
+})
 
 /**
 *                                                  ,-.
