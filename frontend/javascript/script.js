@@ -1,5 +1,5 @@
 const qrcodeDiv = document.getElementById("qrcode")
-const input = document.getElementById("input-link")
+const input = document.getElementById("input-link").value.trim()
 
 
 function criar_QR(){
@@ -10,7 +10,7 @@ function criar_QR(){
     qrcodeDiv.innerHTML = `<h5 style="color: white;">Impossível a criação de códigoQR</h5>`
   }else{
     new QRCode(qrcodeDiv, {
-      text: input.value,
+      text: input,
       width: 150,
       height: 150,
       colorDark: "#ffffff", // cor do QRcode
